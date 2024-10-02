@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
 
 * {
     margin: 0;
@@ -7,6 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* Body styling */
 body {
     height: 100vh;
     display: flex;
@@ -15,6 +16,7 @@ body {
     background-color: #F4f4f4;
 }
 
+/* Profile Card styling */
 .profile-card {
     display: flex;
     flex-direction: column;
@@ -26,8 +28,15 @@ body {
     padding: 25px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    transition: all 0.3s ease;
 }
 
+/* Hover effect on profile card */
+.profile-card:hover {
+    box-shadow: 0 28px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Background color on the top of card */
 .profile-card::before {
     content: '';
     position: absolute;
@@ -39,6 +48,7 @@ body {
     background-color: #68696a;
 }
 
+/* Profile Image styling */
 .image {
     position: relative;
     height: 150px;
@@ -50,7 +60,6 @@ body {
 }
 
 .image .profile-img {
-
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -58,7 +67,8 @@ body {
     border: 3px solid #fff;
 }
 
-.profile-card .text-data {
+/* Text Data: Name and Job */
+.text-data {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,8 +85,8 @@ body {
     font-weight: 400;
 }
 
-.profile-card .media-buttons {
-
+/* Social Media Buttons */
+.media-buttons {
     display: flex;
     align-items: center;
     margin-top: 15px;
@@ -94,10 +104,16 @@ body {
     margin: 0 8px;
     background-color: #68696a;
     text-decoration: none;
-
+    transition: all 0.3s ease;
 }
 
-.profile-card .buttons {
+/* Hover effect on social media buttons */
+.media-buttons .link:hover {
+    transform: scale(1.1);
+}
+
+/* Action buttons */
+.buttons {
     display: flex;
     align-items: center;
     margin-top: 25px;
@@ -116,14 +132,77 @@ body {
     transition: all 0.3s ease-in;
 }
 
+/* Hover effect for buttons */
 .buttons .button:hover {
     background-color: #e41b10;
 }
 
-.profile-card .analytics {
-
+/* Analytics Section */
+.analytics {
     display: flex;
-    align-items: center;
-    margin-top: 25px;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+}
 
+.analytics .data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.analytics .data i {
+    font-size: 24px;
+    color: #68696a;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.analytics .data:hover i {
+    transform: scale(1.2);
+    color: #e41b10;
+}
+
+.analytics .number {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.analytics .label {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 600px) {
+    .profile-card {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .buttons .button {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+
+    .media-buttons .link {
+        font-size: 16px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .analytics .data i {
+        font-size: 20px;
+    }
+
+    .analytics .number {
+        font-size: 16px;
+    }
+
+    .analytics .label {
+        font-size: 10px;
+    }
 }
