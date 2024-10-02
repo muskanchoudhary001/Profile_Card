@@ -33,7 +33,7 @@ body {
 
 /* Hover effect on profile card */
 .profile-card:hover {
-    box-shadow: 0 28px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Background color on the top of card */
@@ -162,13 +162,13 @@ body {
 }
 
 .analytics .data:hover i {
-    transform: scale(1.2);
-    color: #e41b10;
+    transform: scale(1.05); /* Adjusted scale to 5% */
 }
 
 .analytics .number {
     font-size: 18px;
     font-weight: 500;
+    transition: all 0.3s ease; /* Smooth transition for number updates */
 }
 
 .analytics .label {
