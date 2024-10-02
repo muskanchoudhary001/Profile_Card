@@ -6,24 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Profile Card</title>
 
-    <!----CSS --->
-    <link rel="stylesheet" href="style.css ">
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Boxicon CSS-->
+    <!-- Boxicon CSS for social media icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-
 </head>
 
 <body>
+    <!-- Profile Card Container -->
     <div class="profile-card">
+
+        <!-- Profile Image Section -->
         <div class="image">
-            <img src="profile.jpg" alt="" class="profile-img">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
         </div>
 
+        <!-- Profile Details Section -->
         <div class="text-data">
             <span class="name">Muskan Choudhary</span>
             <span class="job">Web Developer</span>
         </div>
+
+        <!-- Social Media Links -->
         <div class="media-buttons">
             <a href="https://mail.google.com/mail/u/0/#inbox" style="background:#f10f0f;" class="link">
                 <i class='bx bxl-gmail'></i>
@@ -38,31 +43,66 @@
                 <i class='bx bxl-twitter'></i>
             </a>
         </div>
+
+        <!-- Action Buttons (Follow and Connect) -->
         <div class="buttons">
             <div class="button" onclick="window.location.href='https://github.com/muskanchoudhary001';">
-                Follow me
+                Follow Me
             </div>
             <div class="button" onclick="window.location.href='https://www.linkedin.com/in/muskan-choudhary-789759175/';">
-                Connect with me 
+                Connect with Me
             </div>
         </div>
 
-        <!-- <div class="analytics">
-        <div class="data">
-            <i class='bx bxs-heart'></i>
-            <span class="number">60k</span>
+        <!-- Analytics Section for Likes, Comments, and Shares -->
+        <div class="analytics">
+            <div class="data" onclick="likePost()">
+                <i class='bx bxs-heart' id="like-icon"></i>
+                <span class="number" id="like-count">60k</span>
+                <span class="label">Likes</span>
+            </div>
+            <div class="data" onclick="commentPost()">
+                <i class='bx bx-message-rounded' id="comment-icon"></i>
+                <span class="number" id="comment-count">20k</span>
+                <span class="label">Comments</span>
+            </div>
+            <div class="data" onclick="sharePost()">
+                <i class='bx bx-share' id="share-icon"></i>
+                <span class="number" id="share-count">12k</span>
+                <span class="label">Shares</span>
+            </div>
         </div>
-        <div class="data">
-            <i class='bx bx-message-rounded'></i>
-            <span class="number">20k</span>
-        </div>
-        <div class="data">
-            <i class='bx bx-share'></i>
-            <span class="number">12k</span>
-        </div>
-         
-      </div> -->
     </div>
+
+    <!-- JavaScript for Like, Comment, and Share functionality -->
+    <script>
+        let likes = 60000;
+        let comments = 20000;
+        let shares = 12000;
+
+        // Function to handle Like action
+        function likePost() {
+            likes++;
+            document.getElementById('like-count').innerText = likes;
+            document.getElementById('like-icon').style.color = "#1e90ff"; // Change to blue
+        }
+
+        // Function to handle Comment action
+        function commentPost() {
+            comments++;
+            document.getElementById('comment-count').innerText = comments;
+            document.getElementById('comment-icon').style.color = "#32CD32"; // Change to green
+            alert("Thank you for your comment!");
+        }
+
+        // Function to handle Share action
+        function sharePost() {
+            shares++;
+            document.getElementById('share-count').innerText = shares;
+            document.getElementById('share-icon').style.color = "#FF4500"; // Change to orange
+            alert("Post shared successfully!");
+        }
+    </script>
 </body>
 
 </html>
